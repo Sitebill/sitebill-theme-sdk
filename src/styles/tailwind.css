@@ -1,0 +1,13 @@
+/*
+ * Tailwind для темы: `@import "@sitebill/theme-sdk/tailwind.css";` в src/style.css темы.
+ *
+ * Без preflight: базовый сброс стилей уже есть на сайте, второй сброс поверх
+ * сломал бы компоненты сайта (Nuxt UI) на той же странице. Утилиты собираются
+ * только по файлам темы (@source в style.css темы) и попадают в style.css пакета.
+ */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
+@import "./tokens.css";
+
+/* Тёмный режим сайта — класс .dark на <html> (как в Nuxt UI). */
+@custom-variant dark (&:where(.dark, .dark *));

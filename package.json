@@ -1,0 +1,79 @@
+{
+  "name": "@sitebill/theme-sdk",
+  "version": "0.3.0",
+  "description": "SDK для собственных тем оформления сайтов Sitebill (Community Edition)",
+  "type": "module",
+  "license": "MIT",
+  "author": "Sitebill <https://sitebillcms.com/>",
+  "homepage": "https://sitebillcms.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sitebill/sitebill-theme-sdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sitebill/sitebill-theme-sdk/issues"
+  },
+  "keywords": [
+    "sitebill",
+    "sitebillcms",
+    "real-estate",
+    "real-estate-cms",
+    "theme",
+    "theme-sdk",
+    "vue",
+    "vue3",
+    "tailwindcss",
+    "nuxt",
+    "white-label",
+    "community-edition",
+    "cms-theme"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "bin": {
+    "sitebill-theme": "./bin/sitebill-theme.mjs"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./components": "./src/components.ts",
+    "./manifest": "./src/contract/manifest.ts",
+    "./tailwind.css": "./src/styles/tailwind.css",
+    "./build/mock-host": {
+      "types": "./build/mock-host.d.mts",
+      "import": "./build/mock-host.mjs"
+    }
+  },
+  "files": [
+    "src",
+    "build",
+    "bin",
+    "sandbox",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0",
+    "vite": ">=7",
+    "@vitejs/plugin-vue": ">=6",
+    "tailwindcss": "^4.1.0",
+    "@tailwindcss/vite": "^4.1.0"
+  },
+  "peerDependenciesMeta": {
+    "tailwindcss": {
+      "optional": true
+    },
+    "@tailwindcss/vite": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "prepare-publish": "node build/publish.mjs"
+  }
+}
